@@ -110,9 +110,6 @@ describe 'Mongoid::Autoinc' do
 
       it 'calls the autoincrementor' do
         expect(Mongoid::Autoinc::Incrementor).to receive(:new)
-          .with('User', :number, auto: true)
-          .and_return(incrementor)
-        expect(Mongoid::Autoinc::Incrementor).to receive(:new)
           .with('Operation', :op_number, scope: 'Dr. Cox', auto: true)
           .and_return(incrementor)
         operation.save!
